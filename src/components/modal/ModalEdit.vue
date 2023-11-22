@@ -5,12 +5,12 @@
 </script>
 
 <template>
-    <div class="modal" @click="checkCloseModal($event)">
+    <div class="modal" @mousedown="checkCloseModal($event)">
         <div class="content">
             <div class="title">
                 <span>Редактировать запись</span>
 
-                <button class="button red close" @click="close()">X</button>
+                <button class="button red close" @click="close($event)">X</button>
             </div>
 
             <div class="inputs">
@@ -86,6 +86,7 @@
         },
         methods: {
             checkCloseModal(event) {
+                console.log(event)
                 if (event.target.classList.contains('modal')) {
                     this.close(true)
                 }

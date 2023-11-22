@@ -20,9 +20,9 @@
                 <template v-if="formData.items.length">
                     <span class="heading">Пункты:</span>
                     <div class="items">
-                        <div class="item" v-for="item in formData.items">
+                        <div class="item" v-for="(item, index) in formData.items">
                             <span>{{ item.title }}</span>
-                            
+                            <button class="button red remove" @click="checkboxRemove(item, index)">X</button>
                         </div>
                     </div>
                 </template>
@@ -77,6 +77,9 @@
             close() {
                 this.modalStore.closeModal()
             },
+            checkboxRemove(item, index) {
+                this.formData.items.splice(index, 1)
+            },  
             submit() {
                 this.todoStore.todo_list.push(this.formData)
                 this.todoStore.saveData()

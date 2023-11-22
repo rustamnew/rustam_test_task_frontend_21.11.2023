@@ -86,7 +86,6 @@
         },
         methods: {
             checkCloseModal(event) {
-                console.log(event)
                 if (event.target.classList.contains('modal')) {
                     this.close(true)
                 }

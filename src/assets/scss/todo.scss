@@ -1,0 +1,64 @@
+.todo-list {
+    max-width: 500px;
+    margin: 0 auto;
+
+    .todo-item {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        .name {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            word-break: break-all;
+            span {
+                font-size: 1.5rem;
+            }
+
+            .buttons {
+                display: flex;
+                flex-shrink: 0;
+    
+                button {
+                    margin-right: 6px;
+    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+            }
+        }
+
+        .doings {
+            display: flex;
+            flex-direction: column;
+
+            .doing-item {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid lightgray;
+                padding: 4px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .check {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+    }
+}
